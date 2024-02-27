@@ -8,7 +8,7 @@
                 <b>Add Category</b>
             </div>
             <div class="card-body">
-                <form action="{{ route('admin.category.store') }}" method="POST">
+                <form action="{{ route('admin.category.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="title">Category Title</label>
@@ -18,7 +18,7 @@
                         <label for="parentCategory">Parent Category</label>
                         <select name="parent_category" class="form-control">
                             <option disabled selected> Select a parent Category</option>
-                            @foreach ($categories as $cat)
+                            @foreach ($allCategories as $cat)
                             <option value="{{ $cat->id }}">{{ str($cat->title)->headline() }}</option>
                             @endforeach
                         </select>
@@ -46,16 +46,29 @@
                 </tr>
                 @foreach ($categories as $key=>$category)
                 <tr>
-                    <td>{{ $loop->first + ($key) }}</td>
-                    <td>{{ $category->title }}</td>
+                    <td>{{ ++$key }}</td>
+                    <td>  <div class="d-flex"><img height="40" class="me-2" src="{{ asset('storage/'.$category->icon) }}" alt="">{{ $category->title }}</div></td>
                     <td>{{ $category->status }}</td>
                     <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
 
                 </tr>
+                @if (count($category->subcategories) > 0)
+                
+                @foreach ($category->subcategories as $subcategory)
+              
+                <tr>
+                    <td>🎯</td>
+                    <td>{{ $subcategory->title }}</td>
+                    <td>{{ $subcategory->status }}</td>
+                    <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+
+                </tr>
+                @endforeach
+                @endif
                 @endforeach
             </table>
             <div class="custom-pagination">
-                {{ $categories->links() }}
+                {{-- {{ $categories->links() }} --}}
             </div>
         </div>
     </div>

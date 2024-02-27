@@ -15,4 +15,14 @@ class Category extends Model
         'icon'
 
     ];
+
+
+    function subcategories()
+    {
+        return $this->hasMany(Category::class, 'category_id')->with('subcategories');
+    }
+    function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
