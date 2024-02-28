@@ -8,22 +8,29 @@
                 <b>Add Category</b>
             </div>
             <div class="card-body">
-                <form action="{{ route('admin.category.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{   route('admin.category.store', $editedCategory ? $editedCategory->id : null) }}"
+                    method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="title">Category Title</label>
-                        <input type="text" class="form-control" placeholder="example: men" name="title">
+                        <input value="{{ $editedCategory->title ?? '' }}" type="text" class="form-control"
+                            placeholder="example: men" name="title">
                     </div>
                     <div class="mb-3">
                         <label for="parentCategory">Parent Category</label>
                         <select name="parent_category" class="form-control">
                             <option disabled selected> Select a parent Category</option>
                             @foreach ($allCategories as $cat)
-                            <option value="{{ $cat->id }}">{{ str($cat->title)->headline() }}</option>
+                            <option {{ $cat->id == $editedCategory?->category_id ? "selected" : "" }} value="{{ $cat->id
+                                }}">{{ str($cat->title)->headline() }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="mb-3">
+                        @isset($editedCategory->icon)
+                        <img src="{{ asset('storage/'.$editedCategory->icon) }}" alt="" width="100">
+                        <input type="hidden" name="oldIcon" value="{{ $editedCategory->icon }}">
+                        @endisset
                         <label for="icon">Category Icon
                             <input type="file" name="icon" class="form-control">
                         </label>
@@ -47,22 +54,31 @@
                 @foreach ($categories as $key=>$category)
                 <tr>
                     <td>{{ ++$key }}</td>
-                    <td>  <div class="d-flex"><img height="40" class="me-2" src="{{ asset('storage/'.$category->icon) }}" alt="">{{ $category->title }}</div></td>
+                    <td>
+                        <div class="d-flex"><img height="40" class="me-2" src="{{ asset('storage/'.$category->icon) }}"
+                                alt="">{{ $category->title }}</div>
+                    </td>
                     <td>{{ $category->status }}</td>
-                    <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                    <td><a href="{{ route('admin.category.show',$category->id) }}"
+                            class="btn btn-sm btn-primary">Edit</a></td>
 
                 </tr>
                 @if (count($category->subcategories) > 0)
-                
+
                 @foreach ($category->subcategories as $subcategory)
-              
+
                 <tr>
                     <td>🎯</td>
-                    <td>{{ $subcategory->title }}</td>
+                    <td>
+                        <div class="d-flex"><img height="40" class="me-2"
+                                src="{{ asset('storage/'.$subcategory->icon) }}" alt="">{{ $subcategory->title }}</div>
+                    </td>
                     <td>{{ $subcategory->status }}</td>
-                    <td><a href="#" class="btn btn-sm btn-primary">Edit</a></td>
+                    <td><a href="{{ route('admin.category.show',$subcategory->id) }}"
+                            class="btn btn-sm btn-primary">Edit</a></td>
 
                 </tr>
+                @include('layouts.categoryComponent')
                 @endforeach
                 @endif
                 @endforeach

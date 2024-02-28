@@ -15,7 +15,7 @@ Route::prefix('/admin')->middleware(['admin'])->name('admin.')->group(function (
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     //* CATEGORY
     Route::prefix('category/')->name('category.')->group(function () {
-        Route::get('/', [CategoryController::class, 'show'])->name('show');
-        Route::post('/store', [CategoryController::class, 'store'])->name('store');
+        Route::get('/{id?}', [CategoryController::class, 'show'])->name('show');
+        Route::post('/store/{id?}', [CategoryController::class, 'store'])->name('store');
     });
 });

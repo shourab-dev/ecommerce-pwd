@@ -13,22 +13,26 @@ class CategoryController extends Controller
 {
     use MediaUploader, SlugBuilder;
 
-    function show()
+    function show($id = null)
     {
-        // $categories = Category::with('subcategories')->where('category_id', null)->latest()->get();
+        $editedCategory = null;
         $allCategories = Category::with('subcategories')->latest()->get();
+        if ($id) {
+            $editedCategory = $allCategories->where('id', $id)->first();
+        }
         $categories = $allCategories->where('category_id', null)->flatten();
-        // dd($categories);
-        return view('backend.category', compact('categories', 'allCategories'));
+
+        return view('backend.category', compact('categories', 'allCategories', 'editedCategory'));
     }
 
-    function store(Request $req)
+    function store(Request $req, $id = null)
     {
         $slug = $this->createSlug(Category::class, $req->title);
-        $storeImage = $this->uploadImage($req->icon, $req->title, 'category');
-        $category =    $this->storeAndUpdate($req, $storeImage);
+        $storeImage = $this->uploadImage($req->icon, $req->title, 'category', $req->oldIcon);
+        $category =    $this->storeAndUpdate($req, $storeImage, $id);
         return redirect(route('admin.category.show'));
     }
+
 
 
     private function storeAndUpdate($req, $storeImage = null, $id = null)
@@ -37,7 +41,7 @@ class CategoryController extends Controller
         $category->title = $req->title;
         $category->slug = str($req->title)->slug();
         $category->category_id = $req->parent_category;
-        $category->icon = $storeImage ?? null;
+        $category->icon = $storeImage ?? $category->icon;
         $category->save();
         return $category ? true : false;
     }
