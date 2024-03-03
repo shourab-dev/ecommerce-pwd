@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
+use App\Helpers\SlugBuilder;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +11,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ProductFactory extends Factory
 {
+    use SlugBuilder;
     /**
      * Define the model's default state.
      *
@@ -17,7 +20,10 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->word(),
+            'slug' => $this->createSlug(Product::class, fake()->word()) . "-" . fake()->randomDigit(),
+            'price' => fake()->numberBetween(100, 500),
+            'short_detail' => fake()->sentence(6)
         ];
     }
 }

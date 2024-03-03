@@ -142,7 +142,7 @@
                         <div class="main-slider-large-thumb">
                             <div class="slider-thumb-activation-one axil-slick-dots">
                                 <div class="single-slide slick-slide" data-sal="slide-up" data-sal-delay="600" data-sal-duration="1500">
-                                    <img src="{{ asset('frontend/assets/images/product/product-38.png') }}"
+                                    <img src="{{ asset(' frontend/assets/images/product/product-38.png') }}"
                                                         alt="Product">
                                                     <div class="product-price">
                                                         <span class="text">From</span>
@@ -420,7 +420,7 @@
                                                                 data-bs-target="#quick-view-modal"><i
                                                                     class="far fa-eye"></i></a></li>
                                                         <li class="select-option">
-                                                            <a href="single-product.html">
+                                                            <a href="{{ route('test.product.show') }}">
                                                                 Add to Cart
                                                             </a>
                                                         </li>
@@ -441,7 +441,7 @@
                                                         </span>
                                                         <span class="rating-number">(64)</span>
                                                     </div>
-                                                    <h5 class="title"><a href="single-product.html">Yantiti Leather &
+                                                    <h5 class="title"><a href="{{ route('test.product.show') }}">Yantiti Leather &
                                                             Canvas Bags</a></h5>
                                                     <div class="product-price-variant">
                                                         <span class="price current-price">$29.99</span>

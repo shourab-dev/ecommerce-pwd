@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('/admin')->middleware(['admin'])->name('admin.')->group(function () {
@@ -18,4 +19,6 @@ Route::prefix('/admin')->middleware(['admin'])->name('admin.')->group(function (
         Route::get('/{id?}', [CategoryController::class, 'show'])->name('show');
         Route::post('/store/{id?}', [CategoryController::class, 'store'])->name('store');
     });
+
+    Route::get('/test', [ProductController::class, 'addOrEditProduct'])->name('product.add');
 });

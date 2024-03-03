@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
-
+use App\Http\Controllers\Frontend\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +18,6 @@ use App\Http\Controllers\Frontend\HomeController;
 
 //* HOME PAGE ROUTE
 Route::get('/', [HomeController::class, 'home'])->name('home');
-
+Route::get('/test/product', [ProductController::class, 'showProduct'])->name('test.product.show');
+Route::get('/test/product/sku', [ProductController::class, 'getSkus'])->name('test.product.sku');
 Auth::routes();

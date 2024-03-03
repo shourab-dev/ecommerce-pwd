@@ -207,13 +207,14 @@
 
     @yield('frontend')
 
+
     <div class="service-area">
         <div class="container">
             <div class="row row-cols-xl-4 row-cols-sm-2 row-cols-1 row--20">
                 <div class="col">
                     <div class="service-box service-style-2">
                         <div class="icon">
-                            <img src="{{ asset('frontend/assets/images/icons/service1.p') }} ng" alt="Service">
+                            <img src="{{ asset('frontend/assets/images/icons/service1.png') }}" alt="Service">
                         </div>
                         <div class="content">
                             <h6 class="title">Fast &amp; Secure Delivery</h6>
@@ -224,7 +225,7 @@
                 <div class="col">
                     <div class="service-box service-style-2">
                         <div class="icon">
-                            <img src="{{ asset('frontend/assets/images/icons/service2.p') }} ng" alt="Service">
+                            <img src="{{ asset('frontend/assets/images/icons/service2.png') }}" alt="Service">
                         </div>
                         <div class="content">
                             <h6 class="title">Money Back Guarantee</h6>
@@ -235,8 +236,7 @@
                 <div class="col">
                     <div class="service-box service-style-2">
                         <div class="icon">
-                            <img src="https://new.axilthemes.com/demo/template/etrade/{{ asset('frontend/assets/images/icons/service3.p') }} ng"
-                                alt="Service">
+                            <img src="{{ asset('frontend/assets/images/icons/service5.png') }}" alt="Service">
                         </div>
                         <div class="content">
                             <h6 class="title">24 Hour Return Policy</h6>
@@ -247,7 +247,7 @@
                 <div class="col">
                     <div class="service-box service-style-2">
                         <div class="icon">
-                            <img src="{{ asset('frontend/assets/images/icons/service4.p') }} ng" alt="Service">
+                            <img src="{{ asset('frontend/assets/images/icons/service4.png') }}" alt="Service">
                         </div>
                         <div class="content">
                             <h6 class="title">Pro Quality Support</h6>
@@ -329,65 +329,73 @@
                                 <span>Save $3 With App & New User only</span>
                                 <div class="download-btn-group">
                                     <div class="qr-code">
-                                        <img src="{{ asset('frontend/assets/images/others/qr.png"') }}  alt="Axilthemes">
-                                        </div>
-                                        <div class="app-link">
-                                            <a href="index-1.html#">
-                                                <img src="{{ asset(' frontend/assets/images/others/app-store.png')
+                                        <img src="{{ asset('frontend/assets/images/others/qr.png') }}" alt="Axilthemes">
+                                    </div>
+                                    <div class="app-link">
+                                        <a href="index-1.html#">
+                                            <img src="{{ asset('frontend/assets/images/others/app-store.png')
                                             }} " alt=" App Store">
                                         </a>
                                         <a href="index-1.html#">
-                                            <img src="{{ asset('frontend/assets/images/others/play-store.png"') }}  alt="Play Store">
-                                            </a>
-                                        </div>
+                                            <img src="{{ asset('frontend/assets/images/others/play-store.png') }}"
+                                                alt="Play Store">
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- End Single Widget  -->
+                    </div>
+                    <!-- End Single Widget  -->
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Top Area  -->
+        <!-- Start Copyright Area  -->
+        <div class="copyright-area copyright-default separator-top">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-4">
+                        <div class="social-share">
+                            <a href="index-1.html#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="index-1.html#"><i class="fab fa-instagram"></i></a>
+                            <a href="index-1.html#"><i class="fab fa-twitter"></i></a>
+                            <a href="index-1.html#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="index-1.html#"><i class="fab fa-discord"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-12">
+                        <div class="copyright-left d-flex flex-wrap justify-content-center">
+                            <ul class="quick-link">
+                                <li>© 2023. All rights reserved by <a target="_blank"
+                                        href="https://axilthemes.com/">Axilthemes</a>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-12">
+                        <div
+                            class="copyright-right d-flex flex-wrap justify-content-xl-end justify-content-center align-items-center">
+                            <span class="card-text">Accept For</span>
+                            <ul class="payment-icons-bottom quick-link">
+                                <li>
+                                    <img src="{{ asset('frontend/assets/images/icons/cart/cart-1.png') }}"
+                                        alt="paypal cart">
+                                </li>
+
+                                <li><img src="{{ asset('frontend/assets/images/icons/cart/cart-2.png') }}"
+                                        alt="paypal cart"></li>
+                                <li><img src="{{ asset('frontend/assets/images/icons/cart/cart-5.png') }}"
+                                        alt="paypal cart"></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- End Footer Top Area  -->
-            <!-- Start Copyright Area  -->
-            <div class="copyright-area copyright-default separator-top">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-4">
-                            <div class="social-share">
-                                <a href="index-1.html#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="index-1.html#"><i class="fab fa-instagram"></i></a>
-                                <a href="index-1.html#"><i class="fab fa-twitter"></i></a>
-                                <a href="index-1.html#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="index-1.html#"><i class="fab fa-discord"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-12">
-                            <div class="copyright-left d-flex flex-wrap justify-content-center">
-                                <ul class="quick-link">
-                                    <li>© 2023. All rights reserved by <a target="_blank" href="https://axilthemes.com/">Axilthemes</a>.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-12">
-                            <div class="copyright-right d-flex flex-wrap justify-content-xl-end justify-content-center align-items-center">
-                                <span class="card-text">Accept For</span>
-                                <ul class="payment-icons-bottom quick-link">
-                                    <li><img src="{{ asset(' frontend/assets/images/icons/cart/cart-1.png"
-                                                alt="') }} paypal cart"></li>
-                                            <li><img src="{{ asset('frontend/assets/images/icons/cart/cart-2.png"
-                                                    alt="') }} paypal cart"></li>
-                                            <li><img src="{{ asset('frontend/assets/images/icons/cart/cart-5.png"
-                                                    alt="') }} paypal cart"></li>
-                                            </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Copyright Area  -->
+        </div>
+        <!-- End Copyright Area  -->
     </footer>
     <!-- End Footer Area  -->
+    @if (true === 'false')
+
 
     <!-- Product Quick View Modal Start -->
     <div class="modal fade quick-view-product" id="quick-view-modal" tabindex="-1" aria-hidden="true">
@@ -406,7 +414,7 @@
                                         <div
                                             class="single-product-thumbnail product-large-thumbnail axil-product thumbnail-badge zoom-gallery">
                                             <div class="thumbnail">
-                                                <img src="{{ asset('frontend/assets/images/product/product-big-01.png"
+                                                <img src="{{ asset(' frontend/assets/images/product/product-big-01.png"
                                                     alt') }}="Product Images">
                                                 <div class="label-block label-right">
                                                     <div class="product-badget">20% OFF</div>
@@ -744,7 +752,8 @@
                                     <div class="content">
                                         <div class="section-title-wrapper">
                                             <span class="title-highlighter highlighter-primary"> <i
-                                                    class="far fa-shopping-basket"></i> Don’t Miss!!</span>
+                                                    class="far fa-shopping-basket"></i>
+                                                Don’t Miss!!</span>
                                             <h3 class="title">Best Sales Offer<br> Grab Yours</h3>
                                         </div>
                                         <div class="poster-countdown countdown"></div>
@@ -755,31 +764,37 @@
                             </div>
                         </div>
                         <div class="closeMask"></div>
-                        <!-- Offer Modal End -->
-                        <!-- JS
-    ============================================ -->
-                        <!-- Modernizer JS -->
-                        <script src="{{ asset('frontend/assets/js/vendor/modernizr.min.js') }}"></script>
-                        <!-- jQuery JS -->
-                        <script src="{{ asset('frontend/assets/js/vendor/jquery.js') }}"></script>
-                        <!-- Bootstrap JS -->
-                        <script src="{{ asset('frontend/assets/js/vendor/popper.min.js') }}"></script>
-                        <script src="{{ asset('frontend/assets/js/vendor/bootstrap.min.js') }}"></script>
-                        <script src="{{ asset('frontend/assets/js/vendor/slick.min.js') }}"></script>
-                        <script src="{{ asset('frontend/assets/js/vendor/js.cookie.js') }}"></script>
-                        <!-- <script src="assets/js/vendor/jquery.style.switcher.js"></script> -->
-                        <script src="{{ asset('frontend/assets/js/vendor/jquery-ui.min.js') }}"></script>
-                        <script src="{{ asset('frontend/assets/js/vendor/jquery.ui.touch-punch.min.js') }}"></script>
-                        <script src="{{ asset('frontend/assets/js/vendor/jquery.countdown.min.js') }}"></script>
-                        <script src="{{ asset('frontend/assets/js/vendor/sal.js') }}"></script>
-                        <script src="{{ asset('frontend/assets/js/vendor/jquery.magnific-popup.min.js') }}"></script>
-                        <script src="{{ asset('frontend/assets/js/vendor/imagesloaded.pkgd.min.js') }}"></script>
-                        <script src="{{ asset('frontend/assets/js/vendor/isotope.pkgd.min.js') }}"></script>
-                        <script src="{{ asset('frontend/assets/js/vendor/counterup.js') }}"></script>
-                        <script src="{{ asset('frontend/assets/js/vendor/waypoints.min.js') }}"></script>
 
-                        <!-- Main JS -->
-                        <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+
+        <!-- JS
+                        <!-- Modernizer JS -->
+        <script src="{{ asset('frontend/assets/js/vendor/modernizr.min.js') }}"></script>
+        <!-- jQuery JS -->
+        <script src="{{ asset('frontend/assets/js/vendor/jquery.js') }}"></script>
+        <!-- Bootstrap JS -->
+        <script src="{{ asset('frontend/assets/js/vendor/popper.min.js') }}"></script>
+        <script src="{{ asset('frontend/assets/js/vendor/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('frontend/assets/js/vendor/slick.min.js') }}"></script>
+        <script src="{{ asset('frontend/assets/js/vendor/js.cookie.js') }}"></script>
+        <!-- <script src="assets/js/vendor/jquery.style.switcher.js"></script> -->
+        <script src="{{ asset('frontend/assets/js/vendor/jquery-ui.min.js') }}"></script>
+        <script src="{{ asset('frontend/assets/js/vendor/jquery.ui.touch-punch.min.js') }}"></script>
+        <script src="{{ asset('frontend/assets/js/vendor/jquery.countdown.min.js') }}"></script>
+        <script src="{{ asset('frontend/assets/js/vendor/sal.js') }}"></script>
+        <script src="{{ asset('frontend/assets/js/vendor/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ asset('frontend/assets/js/vendor/imagesloaded.pkgd.min.js') }}"></script>
+        <script src="{{ asset('frontend/assets/js/vendor/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ asset('frontend/assets/js/vendor/counterup.js') }}"></script>
+        <script src="{{ asset('frontend/assets/js/vendor/waypoints.min.js') }}"></script>
+
+        <!-- Main JS -->
+        <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
+        @stack('customJs')
 
 </body>
 
